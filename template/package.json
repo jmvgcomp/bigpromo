@@ -1,0 +1,30 @@
+{
+  "name": "template-bigpromo",
+  "version": "2.6.1",
+  "description": "Projeto para disciplina de Estudo de Caso em Análise e Desenvolvimento de Sistemas",
+  "main": "index.js",
+  "repository": "https://github.com/jmvgcomp/bigpromo",
+  "private": true,
+  "scripts": {
+    "dev": "npm-run-all --parallel sass webpack",
+    "build": "npm-run-all --parallel css js",
+    "sass": "sass --watch --no-source-map src/sass/index.scss:build/css/index.css",
+    "webpack": "webpack --watch --config webpack.config.js",
+    "css": "sass --no-source-map src/sass/index.scss:build/css/index.css",
+    "js": "webpack --config webpack.config.js",
+    "debug-js": "node build/js/index.js"
+  },
+  "keywords": [],
+  "author": "Joanantha Matheus",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.26.2",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "jquery-mask-plugin": "^1.14.16"
+  }
+}

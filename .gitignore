@@ -1,0 +1,8 @@
+template/node_modules
+# template/build/**/*.css
+# template/build/**/*.js
+# template/build/**/*.jpg
+# template/build/**/*.png
+# template/build/**/*.jpeg
+# template/build/**/*.gif
+# template/build/**/*.svg
