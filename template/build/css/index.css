@@ -1,0 +1,136 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+body {
+  line-height: 1;
+}
+body article, body aside, body details, body figcaption, body figure,
+body footer, body header, body hgroup, body menu, body nav, body section {
+  display: block;
+}
+body ol, body ul {
+  list-style: none;
+}
+body blockquote, body q {
+  quotes: none;
+}
+body blockquote:before, body blockquote:after,
+body q:before, body q:after {
+  content: "";
+  content: none;
+}
+body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "light";
+  src: url("../fonts/Montserrat-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "regular";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "medium";
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "bold";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "black";
+  src: url("../fonts/Montserrat-Black.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+}
+
+.limit {
+  max-width: 1088px;
+  margin: 0 auto;
+}
+
+body header .limit {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body header .limit form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+body header .limit form > input {
+  width: 536px;
+  height: 100%;
+  border-radius: 18px;
+  outline: none;
+  border: none;
+}
+body header .limit form > button {
+  position: absolute;
+  background: none;
+  outline: none;
+  border: none;
+  right: 12px;
+}
+body header .limit .buttons {
+  display: flex;
+}
+body header .limit .buttons a {
+  margin-left: 62px;
+}
+body header .limit .buttons a .circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body header .limit .buttons a .circle img {
+  height: 30px;
+}
+body header .limit .buttons a .circle span {
+  position: absolute;
+}
+body main[home] {
+  background: url("../img/shape_header.svg");
+  background-repeat: no-repeat;
+  background-position-x: calc(50% + 100px);
+  background-position-y: -350px;
+  min-height: 550px;
+}
+body main[home] section.s1 {
+  width: 100%;
+  height: 60px;
+  background-color: red;
+}
+
+/* Arquivos de estilos dos plugins (.scss) */

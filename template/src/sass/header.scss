@@ -1,3 +1,46 @@
 header {
-  
+  .limit{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    form{
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 36px;
+      >input{
+        width: 536px;
+        height: 100%;
+        border-radius: 18px;
+        outline: none;
+        border: none;
+      }
+      >button{
+        position: absolute;
+        background: none;
+        outline: none;
+        border: none;
+        right: 12px;
+      }
+    }
+    .buttons{
+      display: flex;
+      a{
+        margin-left: 62px;
+        .circle{
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            height: 30px;
+          }
+          span{
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
 }
