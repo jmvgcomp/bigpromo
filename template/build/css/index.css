@@ -94,6 +94,10 @@ body header .limit form > input {
   border-radius: 18px;
   outline: none;
   border: none;
+  padding: 0 10px;
+  font-family: "light", sans-serif;
+  font-size: 16px;
+  color: #F9496C;
 }
 body header .limit form > button {
   position: absolute;
@@ -119,6 +123,8 @@ body header .limit .buttons a .circle img {
 }
 body header .limit .buttons a .circle span {
   position: absolute;
+  font-family: "bold", Verdana, Tahoma, sans-serif;
+  font-size: 16px;
 }
 body main[home] {
   background: url("../img/shape_header.svg");
@@ -128,9 +134,77 @@ body main[home] {
   min-height: 550px;
 }
 body main[home] section.s1 {
-  width: 100%;
-  height: 60px;
-  background-color: red;
+  padding: 50px 0;
+}
+body main[home] section.s1 .limit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main[home] section.s1 .limit .container-left {
+  max-width: 547px;
+}
+body main[home] section.s1 .limit .container-left .user {
+  display: flex;
+  align-items: center;
+}
+body main[home] section.s1 .limit .container-left .user .circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main[home] section.s1 .limit .container-left .user .circle span {
+  position: absolute;
+  font-family: "bold", sans-serif;
+  font-size: 39px;
+  color: #333333;
+}
+body main[home] section.s1 .limit .container-left .user .data {
+  margin-left: 17px;
+  margin: 15px;
+}
+body main[home] section.s1 .limit .container-left .user .data h5, body main[home] section.s1 .limit .container-left .user .data span {
+  font-size: 14px;
+  color: #333333;
+  font-family: "bold", sans-serif;
+  color: #333333;
+}
+body main[home] section.s1 .limit .container-left .product-name h1 {
+  margin: 20px 0;
+  font-size: 45px;
+  line-height: 55px;
+  font-family: "bold", sans-serif;
+  color: #333333;
+}
+body main[home] section.s1 .limit .container-left .product-name > a {
+  font-family: "medium", sans-serif;
+  color: #333333;
+  font-size: 32px;
+  transition: color 0.5s;
+}
+body main[home] section.s1 .limit .container-left .product-name > a:hover {
+  color: #F9496C;
+}
+body main[home] section.s1 .limit .container-right .card {
+  position: relative;
+  width: 444px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 26px;
+  background-color: #FFF;
+  border: 1px solid #E8E7F3;
+  box-shadow: 0 22px 78px rgba(116, 130, 194, 0.3);
+}
+body main[home] section.s1 .limit .container-right .card .path {
+  position: absolute;
+  left: 6px;
+}
+body main[home] section.s1 .limit .container-right .card > img {
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* Arquivos de estilos dos plugins (.scss) */

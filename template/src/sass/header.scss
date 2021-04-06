@@ -15,6 +15,10 @@ header {
         border-radius: 18px;
         outline: none;
         border: none;
+        padding: 0 10px;
+        font-family: 'light', sans-serif;
+        font-size: 16px;
+        color: $primary;
       }
       >button{
         position: absolute;
@@ -38,6 +42,8 @@ header {
           }
           span{
             position: absolute;
+            font-family: 'bold', Verdana, Tahoma, sans-serif;
+            font-size: 16px;
           }
         }
       }
