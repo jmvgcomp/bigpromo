@@ -1,14 +1,16 @@
-main[add]{
+main[add] {
   background: url('../img/shape_add.svg');
   background-repeat: no-repeat;
   background-position-y: -550px;
   background-position-x: calc(50% - 250px);
-  .limit{
-    .logo{
+
+  .limit {
+    .logo {
       padding: 20px 0;
-     display: flex;
-     justify-content: flex-end;
+      display: flex;
+      justify-content: flex-end;
     }
   }
+
   @import 's1';
 }

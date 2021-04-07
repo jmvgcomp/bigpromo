@@ -1,15 +1,17 @@
 header {
-  .limit{
+  .limit {
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    form{
+
+    form {
       position: relative;
       display: flex;
       align-items: center;
       height: 36px;
-      >input{
+
+      > input {
         width: 536px;
         height: 100%;
         border-radius: 18px;
@@ -20,7 +22,8 @@ header {
         font-size: 16px;
         color: $primary;
       }
-      >button{
+
+      > button {
         position: absolute;
         background: none;
         outline: none;
@@ -28,19 +31,24 @@ header {
         right: 12px;
       }
     }
-    .buttons{
+
+    .buttons {
       display: flex;
-      a{
+
+      a {
         margin-left: 62px;
-        .circle{
+
+        .circle {
           position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
-          img{
+
+          img {
             height: 30px;
           }
-          span{
+
+          span {
             position: absolute;
             font-family: 'bold', Verdana, Tahoma, sans-serif;
             font-size: 16px;

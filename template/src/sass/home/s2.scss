@@ -1,4 +1,4 @@
-section.s2{
+section.s2 {
   padding: 120px 0 80px;
   min-height: 1200px;
   background: url('../img/shape_form.svg');
@@ -6,14 +6,15 @@ section.s2{
   background-position-y: -50px;
   background-position-x: -5vw;
 
-  .limit{
-    
-    .cards{
+  .limit {
+
+    .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       align-items: center;
-      .card{
-        justify-self:center;
+
+      .card {
+        justify-self: center;
         width: 260px;
         height: 400px;
         margin-bottom: 15px;
@@ -25,14 +26,17 @@ section.s2{
         border: 1px solid #E8E7F3;
         box-shadow: 0 22px 78px rgba($color: #7482C2, $alpha: 0.3);
         position: relative;
-        >img{
+
+        > img {
           margin-top: 14px;
           height: 223px;
           object-fit: contain;
         }
-        .data{
+
+        .data {
           margin-top: 18px;
-          h1{
+
+          h1 {
             max-width: 245px;
             font-family: 'bold', sans-serif;
             font-size: 14px;
@@ -40,35 +44,42 @@ section.s2{
             word-break: break-word;
             overflow-y: hidden;
           }
-          .data-product{
+
+          .data-product {
             margin: 10px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            .value{
-              h2{
+
+            .value {
+              h2 {
                 font-family: 'bold', sans-serif;
                 font-size: 22px;
                 color: $primary;
               }
-              h3{
-                font-family: 'bold',sans-serif;
+
+              h3 {
+                font-family: 'bold', sans-serif;
                 font-size: 14px;
                 color: $secondary;
               }
-              span{
-                font-family: 'bold',sans-serif;
+
+              span {
+                font-family: 'bold', sans-serif;
                 font-size: 10px;
                 color: $secondary;
               }
             }
-            .likes{
+
+            .likes {
               display: flex;
               align-items: flex-end;
-              >img{
+
+              > img {
                 height: 18px;
               }
-              span{
+
+              span {
                 font-family: 'bold', sans-serif;
                 font-size: 14px;
                 color: $primary;
@@ -77,7 +88,8 @@ section.s2{
             }
           }
         }
-        &::after{
+
+        &::after {
           content: '';
           position: absolute;
           display: block;
@@ -88,8 +100,9 @@ section.s2{
           background-color: #FF6456;
           border-radius: 10px;
         }
-        a{
-          button{
+
+        a {
+          button {
             width: 120px;
             height: 28px;
             border-radius: 30px;
@@ -98,10 +111,11 @@ section.s2{
             outline: none;
             font-family: 'regular', sans-serif;
             font-size: 14px;
-            background: linear-gradient( 45deg, #F4347B, #FF6456);
+            background: linear-gradient(45deg, #F4347B, #FF6456);
             color: #FFF;
             transition: 0.5s;
-            &:hover{
+
+            &:hover {
               width: 130px;
               height: 30px;
             }
