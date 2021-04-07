@@ -134,7 +134,7 @@ body main[home] {
   min-height: 550px;
 }
 body main[home] section.s1 {
-  padding: 50px 0;
+  padding: 50px 0 0;
 }
 body main[home] section.s1 .limit {
   display: flex;
@@ -205,6 +205,111 @@ body main[home] section.s1 .limit .container-right .card .path {
 body main[home] section.s1 .limit .container-right .card > img {
   max-width: 100%;
   object-fit: contain;
+}
+body main[home] section.s2 {
+  padding: 120px 0 80px;
+  min-height: 1200px;
+  background: url("../img/shape_form.svg");
+  background-repeat: no-repeat;
+  background-position-y: -50px;
+  background-position-x: -5vw;
+}
+body main[home] section.s2 .limit .cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+body main[home] section.s2 .limit .cards .card {
+  justify-self: center;
+  width: 260px;
+  height: 400px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 26px;
+  background-color: #FFF;
+  border: 1px solid #E8E7F3;
+  box-shadow: 0 22px 78px rgba(116, 130, 194, 0.3);
+  position: relative;
+}
+body main[home] section.s2 .limit .cards .card > img {
+  margin-top: 14px;
+  height: 223px;
+  object-fit: contain;
+}
+body main[home] section.s2 .limit .cards .card .data {
+  margin-top: 18px;
+}
+body main[home] section.s2 .limit .cards .card .data h1 {
+  max-width: 245px;
+  font-family: "bold", sans-serif;
+  font-size: 14px;
+  color: #FF6456;
+  word-break: break-word;
+  overflow-y: hidden;
+}
+body main[home] section.s2 .limit .cards .card .data .data-product {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main[home] section.s2 .limit .cards .card .data .data-product .value h2 {
+  font-family: "bold", sans-serif;
+  font-size: 22px;
+  color: #F9496C;
+}
+body main[home] section.s2 .limit .cards .card .data .data-product .value h3 {
+  font-family: "bold", sans-serif;
+  font-size: 14px;
+  color: #F63A77;
+}
+body main[home] section.s2 .limit .cards .card .data .data-product .value span {
+  font-family: "bold", sans-serif;
+  font-size: 10px;
+  color: #F63A77;
+}
+body main[home] section.s2 .limit .cards .card .data .data-product .likes {
+  display: flex;
+  align-items: flex-end;
+}
+body main[home] section.s2 .limit .cards .card .data .data-product .likes > img {
+  height: 18px;
+}
+body main[home] section.s2 .limit .cards .card .data .data-product .likes span {
+  font-family: "bold", sans-serif;
+  font-size: 14px;
+  color: #F9496C;
+  margin: 0 5px;
+}
+body main[home] section.s2 .limit .cards .card::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 100px;
+  right: 0;
+  width: 6px;
+  height: 200px;
+  background-color: #FF6456;
+  border-radius: 10px;
+}
+body main[home] section.s2 .limit .cards .card a button {
+  width: 120px;
+  height: 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: "regular", sans-serif;
+  font-size: 14px;
+  background: linear-gradient(45deg, #F4347B, #FF6456);
+  color: #FFF;
+  transition: 0.5s;
+}
+body main[home] section.s2 .limit .cards .card a button:hover {
+  width: 130px;
+  height: 30px;
 }
 
 /* Arquivos de estilos dos plugins (.scss) */
