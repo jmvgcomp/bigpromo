@@ -11,19 +11,20 @@
 <main add>
     <div class="limit">
         <div class="logo">
-            <a href="index.html"><img src="build/img/logo.svg" alt=""></a>
+            <a href="index.html"><img src="img/logo.svg" alt=""></a>
         </div>
     </div>
 
     <section class="s1">
         <div class="limit">
             <form action="">
-                <input type="text"
+                <input type="text" id="linkPromocao"
                        placeholder="Olá, Jhonatan! Digite o link correspondente a oferta! Ex.: http://www....">
+                <div id="alert"></div>
                 <div class="container">
                     <div class="left">
                         <div class="card">
-                            <img src="build/img/placa.png" alt="">
+                            <img id="imagem" src="img/logo.svg" alt="">
                         </div>
                     </div>
                     <div class="right">
@@ -54,5 +55,7 @@
 
 
 </main>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script th:src="@{/js/bigpromo.js}" th:fragment="js"></script>
 </body>
 </html>

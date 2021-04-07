@@ -9,4 +9,8 @@ public class HomeController {
     public String init(){
         return "index";
     }
+    @GetMapping("/add")
+    public String add(){
+        return "add";
+    }
 }
