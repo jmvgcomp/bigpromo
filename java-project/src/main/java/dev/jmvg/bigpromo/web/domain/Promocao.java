@@ -39,4 +39,8 @@ public class Promocao {
 
     @Column(name = "data_cadastro", nullable = false)
     private LocalDateTime dataCadastro;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_fk")
+    private Categoria categoria;
 }
