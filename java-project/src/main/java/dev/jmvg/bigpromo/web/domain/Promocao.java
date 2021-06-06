@@ -34,7 +34,7 @@ public class Promocao {
     @Column(name = "preco_promocao",nullable = false)
     private BigDecimal preco;
 
-    @Column(name = "total_likes",nullable = false)
+    @Column(name = "total_likes")
     private int likes;
 
     @Column(name = "data_cadastro", nullable = false)

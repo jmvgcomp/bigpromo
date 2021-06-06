@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{/style.css}">
     <title>bigpromo.</title>
 </head>
 <body>
 <main home>
     <header>
         <div class="limit">
-            <a href="#"><img src="img/logo.svg" alt="Logo bigpromo."></a>
+            <a th:href="@{/}"><img src="img/logo.svg" alt="Logo bigpromo."></a>
             <form action="">
                 <input type="text">
                 <button type="submit"><img src="img/icons/search.svg" alt=""></button>
             </form>
             <div class="buttons">
-                <a href="add"><img src="img//icons/add.svg" alt=""></a>
+                <a th:href="@{/promocao/add}"><img src="img/icons/add.svg" alt=""></a>
                 <a href="">
                     <div class="circle">
                         <img src="img/icons/circle.svg" alt="">

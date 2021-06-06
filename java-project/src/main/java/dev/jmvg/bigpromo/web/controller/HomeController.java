@@ -7,10 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
     @GetMapping("/")
     public String init(){
-        return "index";
-    }
-    @GetMapping("/add")
-    public String add(){
-        return "add";
+        return "redirect:/promocao/add";
     }
 }

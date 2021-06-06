@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{/style.css}">
     <title>bigpromo.</title>
 </head>
 <body>
 <main add>
     <div class="limit">
         <div class="logo">
-            <a href="index.html"><img src="img/logo.svg" alt=""></a>
+            <a th:href="@{/}"><img src="img/logo.svg" alt=""></a>
         </div>
     </div>
 
     <section class="s1">
         <div class="limit">
-            <form action="">
+            <form id="form-add-promo" action="">
                 <input type="text" id="linkPromocao"
                        placeholder="Olá, Jhonatan! Digite o link correspondente a oferta! Ex.: http://www....">
                 <div id="alert"></div>
                 <div class="container">
                     <div class="left">
                         <div class="card">
-                            <img id="imagem" src="img/logo.svg" alt="">
+                            <img id="imagem" th:src="@{/img/logo.svg}" alt="">
                         </div>
                     </div>
                     <div class="right">
@@ -37,8 +37,12 @@
                             <input type="text" name="valor" id="valor">
                         </div>
                         <div class="group">
-                            <label for="categoria">categoria</label>
-                            <input type="text" name="categoria" id="categoria">
+                            <label for="categoria">Categoria</label>
+                            <select id="categoria" for="categoria">
+                                <option value="">Selecione</option>
+                                <option th:each="c : ${categorias}" th:text="${c.nome}" th:value="${c.id}"></option>
+                            </select>
+
                         </div>
                         <div class="group">
                             <label for="descricao">descrição</label>
