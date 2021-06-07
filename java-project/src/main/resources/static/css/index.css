@@ -27,26 +27,21 @@ time, mark, audio, video {
 body {
     line-height: 1;
 }
-
 body article, body aside, body details, body figcaption, body figure,
 body footer, body header, body hgroup, body menu, body nav, body section {
     display: block;
 }
-
 body ol, body ul {
     list-style: none;
 }
-
 body blockquote, body q {
     quotes: none;
 }
-
 body blockquote:before, body blockquote:after,
 body q:before, body q:after {
     content: "";
     content: none;
 }
-
 body table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -56,27 +51,22 @@ body table {
     font-family: "light";
     src: url("../fonts/Montserrat-Light.ttf") format("truetype");
 }
-
 @font-face {
     font-family: "regular";
     src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
 }
-
 @font-face {
     font-family: "medium";
     src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
 }
-
 @font-face {
     font-family: "bold";
     src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
 }
-
 @font-face {
     font-family: "black";
     src: url("../fonts/Montserrat-Black.ttf") format("truetype");
 }
-
 * {
     box-sizing: border-box;
 }
@@ -92,14 +82,12 @@ body header .limit {
     align-items: center;
     justify-content: space-between;
 }
-
 body header .limit form {
     position: relative;
     display: flex;
     align-items: center;
     height: 36px;
 }
-
 body header .limit form > input {
     width: 536px;
     height: 100%;
@@ -111,7 +99,6 @@ body header .limit form > input {
     font-size: 16px;
     color: #F9496C;
 }
-
 body header .limit form > button {
     position: absolute;
     background: none;
@@ -119,32 +106,26 @@ body header .limit form > button {
     border: none;
     right: 12px;
 }
-
 body header .limit .buttons {
     display: flex;
 }
-
 body header .limit .buttons a {
     margin-left: 62px;
 }
-
 body header .limit .buttons a .circle {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 body header .limit .buttons a .circle img {
     height: 30px;
 }
-
 body header .limit .buttons a .circle span {
     position: absolute;
     font-family: "bold", Verdana, Tahoma, sans-serif;
     font-size: 16px;
 }
-
 body main[home] {
     background: url("../img/shape_header.svg");
     background-repeat: no-repeat;
@@ -152,52 +133,66 @@ body main[home] {
     background-position-y: -350px;
     min-height: 550px;
 }
-
 body main[home] section.s1 {
     padding: 50px 0 0;
 }
-
+body main[home] section.s1 .loader {
+    border: 1px solid #FA4C69;
+    border-top: 16px solid #F4347B;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+body main[home] section.s1 .pre-load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 -50% 0 0;
+    transform: translate(-50%, -50%);
+}
 body main[home] section.s1 .limit {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 body main[home] section.s1 .limit .container-left {
     max-width: 547px;
 }
-
 body main[home] section.s1 .limit .container-left .user {
     display: flex;
     align-items: center;
 }
-
 body main[home] section.s1 .limit .container-left .user .circle {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 body main[home] section.s1 .limit .container-left .user .circle span {
     position: absolute;
     font-family: "bold", sans-serif;
     font-size: 39px;
     color: #333333;
 }
-
 body main[home] section.s1 .limit .container-left .user .data {
     margin-left: 17px;
     margin: 15px;
 }
-
 body main[home] section.s1 .limit .container-left .user .data h5, body main[home] section.s1 .limit .container-left .user .data span {
     font-size: 14px;
     color: #333333;
     font-family: "bold", sans-serif;
     color: #333333;
 }
-
 body main[home] section.s1 .limit .container-left .product-name h1 {
     margin: 20px 0;
     font-size: 45px;
@@ -205,18 +200,15 @@ body main[home] section.s1 .limit .container-left .product-name h1 {
     font-family: "bold", sans-serif;
     color: #333333;
 }
-
 body main[home] section.s1 .limit .container-left .product-name > a {
     font-family: "medium", sans-serif;
     color: #333333;
     font-size: 32px;
     transition: color 0.5s;
 }
-
 body main[home] section.s1 .limit .container-left .product-name > a:hover {
     color: #F9496C;
 }
-
 body main[home] section.s1 .limit .container-right .card {
     position: relative;
     width: 444px;
@@ -229,17 +221,14 @@ body main[home] section.s1 .limit .container-right .card {
     border: 1px solid #E8E7F3;
     box-shadow: 0 22px 78px rgba(116, 130, 194, 0.3);
 }
-
 body main[home] section.s1 .limit .container-right .card .path {
     position: absolute;
     left: 6px;
 }
-
 body main[home] section.s1 .limit .container-right .card > img {
     max-width: 100%;
     object-fit: contain;
 }
-
 body main[home] section.s2 {
     padding: 120px 0 80px;
     min-height: 1200px;
@@ -248,13 +237,11 @@ body main[home] section.s2 {
     background-position-y: -50px;
     background-position-x: -5vw;
 }
-
 body main[home] section.s2 .limit .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
 }
-
 body main[home] section.s2 .limit .cards .card {
     justify-self: center;
     width: 260px;
@@ -269,17 +256,14 @@ body main[home] section.s2 .limit .cards .card {
     box-shadow: 0 22px 78px rgba(116, 130, 194, 0.3);
     position: relative;
 }
-
 body main[home] section.s2 .limit .cards .card > img {
     margin-top: 14px;
     height: 223px;
     object-fit: contain;
 }
-
 body main[home] section.s2 .limit .cards .card .data {
     margin-top: 18px;
 }
-
 body main[home] section.s2 .limit .cards .card .data h1 {
     max-width: 245px;
     font-family: "bold", sans-serif;
@@ -288,48 +272,40 @@ body main[home] section.s2 .limit .cards .card .data h1 {
     word-break: break-word;
     overflow-y: hidden;
 }
-
 body main[home] section.s2 .limit .cards .card .data .data-product {
     margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 body main[home] section.s2 .limit .cards .card .data .data-product .value h2 {
     font-family: "bold", sans-serif;
     font-size: 22px;
     color: #F9496C;
 }
-
 body main[home] section.s2 .limit .cards .card .data .data-product .value h3 {
     font-family: "bold", sans-serif;
     font-size: 14px;
     color: #F63A77;
 }
-
 body main[home] section.s2 .limit .cards .card .data .data-product .value span {
     font-family: "bold", sans-serif;
     font-size: 10px;
     color: #F63A77;
 }
-
 body main[home] section.s2 .limit .cards .card .data .data-product .likes {
     display: flex;
     align-items: flex-end;
 }
-
 body main[home] section.s2 .limit .cards .card .data .data-product .likes > img {
     height: 18px;
 }
-
 body main[home] section.s2 .limit .cards .card .data .data-product .likes span {
     font-family: "bold", sans-serif;
     font-size: 14px;
     color: #F9496C;
     margin: 0 5px;
 }
-
 body main[home] section.s2 .limit .cards .card::after {
     content: "";
     position: absolute;
@@ -341,7 +317,6 @@ body main[home] section.s2 .limit .cards .card::after {
     background-color: #FF6456;
     border-radius: 10px;
 }
-
 body main[home] section.s2 .limit .cards .card a button {
     width: 120px;
     height: 28px;
@@ -355,29 +330,24 @@ body main[home] section.s2 .limit .cards .card a button {
     color: #FFF;
     transition: 0.5s;
 }
-
 body main[home] section.s2 .limit .cards .card a button:hover {
     width: 130px;
     height: 30px;
 }
-
 body main[add] {
     background: url("../img/shape_add.svg");
     background-repeat: no-repeat;
     background-position-y: -550px;
     background-position-x: calc(50% - 250px);
 }
-
 body main[add] .limit .logo {
     padding: 20px 0;
     display: flex;
     justify-content: flex-end;
 }
-
 body main[add] section.s1 {
     padding: 10px 0;
 }
-
 body main[add] section.s1 .limit form > input[type=text] {
     width: 99%;
     height: 50px;
@@ -389,22 +359,18 @@ body main[add] section.s1 .limit form > input[type=text] {
     font-family: "bold", sans-serif;
     color: #F9496C;
 }
-
 body main[add] section.s1 .limit form > input[type=text]::placeholder {
     color: #F9496C;
     opacity: 0.8;
 }
-
 body main[add] section.s1 .limit form .container {
     margin-top: 20px;
     display: flex;
     position: relative;
 }
-
 body main[add] section.s1 .limit form .container .left {
     padding-right: 60px;
 }
-
 body main[add] section.s1 .limit form .container .left .card {
     width: 450px;
     height: 430px;
@@ -416,32 +382,27 @@ body main[add] section.s1 .limit form .container .left .card {
     border: 1px solid #E8E7F3;
     box-shadow: 0 22px 78px rgba(116, 130, 194, 0.3);
 }
-
 body main[add] section.s1 .limit form .container .left .card > img {
     width: 400px;
     height: 400px;
     object-fit: contain;
 }
-
 body main[add] section.s1 .limit form .container .right {
     flex: 1;
     padding-right: 20px;
 }
-
 body main[add] section.s1 .limit form .container .right .group {
     display: flex;
     flex-direction: column;
     margin: 10px 0;
 }
-
 body main[add] section.s1 .limit form .container .right .group > label {
     font-size: 20px;
     font-family: "medium", sans-serif;
     color: #FA4C69;
     margin-bottom: 5px;
 }
-
-body main[add] section.s1 .limit form .container .right .group > input {
+body main[add] section.s1 .limit form .container .right .group > input, body main[add] section.s1 .limit form .container .right .group select {
     width: 100%;
     height: 40px;
     border: 1px solid #FF6357;
@@ -452,7 +413,6 @@ body main[add] section.s1 .limit form .container .right .group > input {
     font-family: "bold", sans-serif;
     color: #F9496C;
 }
-
 body main[add] section.s1 .limit form .container .right .group textarea {
     height: 160px;
     border: 1px solid #FF6357;
@@ -463,20 +423,17 @@ body main[add] section.s1 .limit form .container .right .group textarea {
     color: #F9496C;
     resize: none;
 }
-
 body main[add] section.s1 .limit form .container::after {
     content: url("../img/path.svg");
     position: absolute;
     top: -55px;
     right: 0;
 }
-
 body main[add] section.s1 .limit form .submit {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
 body main[add] section.s1 .limit form .submit input[type=submit] {
     width: 500px;
     height: 45px;
@@ -490,31 +447,8 @@ body main[add] section.s1 .limit form .submit input[type=submit] {
     cursor: pointer;
     transition: width 0.5s;
 }
-
 body main[add] section.s1 .limit form .submit input[type=submit]:hover {
     width: 530px;
-}
-
-.loader{
-    border: 1px solid #FA4C69;
-    border-top: 16px solid #F4347B;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0%{ transform: rotate(0); }
-    100% { transform: rotate(360deg);}
-}
-
-.pre-load{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: 0 -50% 0 0;
-    transform: translate(-50%, -50%);
 }
 
 /* Arquivos de estilos dos plugins (.scss) */
