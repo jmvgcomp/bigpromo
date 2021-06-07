@@ -1,6 +1,6 @@
 package dev.jmvg.bigpromo.web.domain;
 
-import lombok.Data;
+import lombok.*;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
@@ -9,7 +9,11 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 @Table(name = "promocoes")
 public class Promocao {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,13 +25,13 @@ public class Promocao {
     @Column(name = "link_promocao",nullable = false)
     private String linkPromocao;
 
-    @Column(name = "site_promocao", nullable = false)
+    @Column(name = "site_promocao")
     private String site;
 
     @Column(name = "descricao")
     private String descricao;
 
-    @Column(name = "link_imagem", nullable = false)
+    @Column(name = "link_imagem", nullable = false, length = 1000)
     private String linkImagem;
 
     @NumberFormat(style = Style.CURRENCY, pattern = "#,##0.00")

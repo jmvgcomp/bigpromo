@@ -495,4 +495,26 @@ body main[add] section.s1 .limit form .submit input[type=submit]:hover {
     width: 530px;
 }
 
+.loader{
+    border: 1px solid #FA4C69;
+    border-top: 16px solid #F4347B;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0%{ transform: rotate(0); }
+    100% { transform: rotate(360deg);}
+}
+
+.pre-load{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 -50% 0 0;
+    transform: translate(-50%, -50%);
+}
+
 /* Arquivos de estilos dos plugins (.scss) */

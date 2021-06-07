@@ -1,13 +1,13 @@
 $("#form-add-promo").submit(function (event){
     event.preventDefault();
-    let promo = {};
+    var promo = {};
     promo.linkPromocao = $("#linkPromocao").val();
     promo.descricao = $("#descricao").val();
     promo.preco = $("#valor").val();
     promo.titulo = $("#titulo").val();
     promo.categoria = $("#categoria").val();
     promo.linkImagem = $("#imagem").attr("src");
-    promo.site = $("#site").text();
+    //promo.site = $("#site").text();
 
     console.log("Promo >", promo)
 
@@ -15,13 +15,32 @@ $("#form-add-promo").submit(function (event){
         method: "POST",
         url: "/promocao/save",
         data: promo,
+        beforeSend: function (){
+            $("#form-add-promo").hide();
+            $("#loader-form").addClass("loader").show();
+        },
         success: function (){
+            $("#form-add-promo").each(function (){
+                this.reset();
+            })
+            $("#imagem").attr("src", "/img/logo.svg")
+            $("#site").text("");
             $('#alert').addClass("alert alert-success").text("Promoção cadastrada com sucesso!");
+
+
         },
         error: function (xhr){
             console.log("Error > ", xhr.responseText);
             $("#alert").addClass("alert alert-error").text("Não foi possível salvar esta promoção");
+        },
+        complete: function (){
+            $("#loader-form").fadeOut(800, function (){
+                    $("#form-add-promo").fadeIn(250);
+                    $("#loader-form").removeClass("loader");
+                })
         }
+
+
     })
 
 })
@@ -34,17 +53,16 @@ $("#linkPromocao").on("change", function (){
             url: "/meta/info?url="+url,
             cache: false,
             beforeSend: function (){
-                $("#alert").removeClass("alert alert-danger").text("");
+                $("#alert").removeClass("alert alert-danger alert-success").text("");
                 $("#titulo").val("");
-                $("#site").text("");
-                $("#imagem").attr("src", "img/logo.svg");
+                //$("#site").text("");
+                $("#imagem").attr("src", "/img/logo.svg");
             },
             success: function(data){
                 console.log(data)
                 $("#titulo").val(data.title);
-                $("#site").text(data.site.replace("@", ""));
+                //$("#site").text(data.site.replace("@", ""));
                 $("#imagem").attr("src", data.image);
-
 
             },
             statusCode:{

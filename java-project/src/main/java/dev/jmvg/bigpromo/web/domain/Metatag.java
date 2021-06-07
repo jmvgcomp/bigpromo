@@ -1,10 +1,14 @@
 package dev.jmvg.bigpromo.web.domain;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Metatag implements Serializable {
     private String site;
     private String title;
