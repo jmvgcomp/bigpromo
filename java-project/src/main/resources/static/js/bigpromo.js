@@ -3,7 +3,7 @@ $("#form-add-promo").submit(function (event){
     var promo = {};
     promo.linkPromocao = $("#linkPromocao").val();
     promo.descricao = $("#descricao").val();
-    promo.preco = $("#valor").val();
+    promo.preco = $("#preco").val();
     promo.titulo = $("#titulo").val();
     promo.categoria = $("#categoria").val();
     promo.linkImagem = $("#imagem").attr("src");
@@ -13,7 +13,7 @@ $("#form-add-promo").submit(function (event){
 
     $.ajax({
         method: "POST",
-        url: "/promocao/save",
+        url: "/save",
         data: promo,
         beforeSend: function (){
             $("#form-add-promo").hide();
@@ -25,9 +25,16 @@ $("#form-add-promo").submit(function (event){
             })
             $("#imagem").attr("src", "/img/logo.svg")
             $("#site").text("");
-            $('#alert').addClass("alert alert-success").text("Promoção cadastrada com sucesso!");
-
-
+            $('#alert').removeClass("alert alert-error").addClass("alert alert-success").text("Promoção cadastrada com sucesso!");
+        },
+        statusCode: {
+            422: function (xhr){
+                console.log('status error ', xhr.status);
+                let errors = $.parseJSON(xhr.responseText);
+                $.each(errors, function (key, val){
+                    $("#error-"+key).addClass('error-validacao').text(val);
+                })
+            }
         },
         error: function (xhr){
             console.log("Error > ", xhr.responseText);

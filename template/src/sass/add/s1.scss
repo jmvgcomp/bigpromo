@@ -3,6 +3,28 @@ section.s1 {
 
   .limit {
     form {
+      .alert{
+        font-size: 14px;
+        font-family: 'bold', sans-serif;
+        text-align: right;
+        padding-right: 20px;
+        padding-top: 5px;
+      }
+      .alert-error{
+        color: #f0294b;
+      }
+      .alert-success{
+        color: #20ac55;
+      }
+      #error-linkPromocao{
+        font-size: 14px;
+        font-family: 'bold', sans-serif;
+        text-align: right;
+        padding-right: 20px;
+        padding-top: 5px;
+        color: #f0294b;
+      }
+      
       > input[type="text"] {
         width: 99%;
         height: 50px;
@@ -55,7 +77,13 @@ section.s1 {
             display: flex;
             flex-direction: column;
             margin: 10px 0;
-
+            .error-validacao{
+              font-size: 12px;
+              font-family: 'bold', sans-serif;
+              color: #f0294b;
+              padding-top: 5px;
+              padding-left: 5px;
+            }
             > label {
               font-size: 20px;
               font-family: 'medium', sans-serif;

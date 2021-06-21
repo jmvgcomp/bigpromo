@@ -1,0 +1,27 @@
+<div th:each="promo : ${promocoes}">
+  <div th:id="${promo.id}" class="card">
+    <img th:src="${promo.linkImagem}" alt="">
+      <div class="data">
+        <h1 th:text="${promo.titulo}"></h1>
+        <div class="data-product">
+          <div class="value">
+            <h2 th:text="|R$ ${{promo.preco}} |">R$ 6.299,00</h2>
+            <h3 th:text="${promo.site}">Amazon.com</h3>
+            <span th:text="${#temporals.format(promo.dataCadastro, 'dd/MM/yyyy')}">06/04/2021</span>
+          </div>
+          <div class="likes">
+            <button>
+            <img src="img/icons/like.svg" alt="">
+            <span th:text="${promo.likes}">0</span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    <a th:href="${promo.linkPromocao}">
+      <button>
+        Acessar oferta
+      </button>
+    </a>
+  </div>
+</div>
