@@ -28,6 +28,7 @@ section.s2 {
         position: relative;
 
         > img {
+          width: 100%;
           margin-top: 14px;
           height: 223px;
           object-fit: contain;
@@ -74,16 +75,19 @@ section.s2 {
             .likes {
               display: flex;
               align-items: flex-end;
+              button{
+                width: max-content;
+                background: transparent;
+                > img {
+                  height: 18px;
+                }
 
-              > img {
-                height: 18px;
-              }
-
-              span {
-                font-family: 'bold', sans-serif;
-                font-size: 14px;
-                color: $primary;
-                margin: 0 5px;
+                span {
+                  font-family: 'bold', sans-serif;
+                  font-size: 14px;
+                  color: $primary;
+                  margin: 0 5px;
+                }
               }
             }
           }

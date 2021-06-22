@@ -10,11 +10,10 @@
             <span th:text="${#temporals.format(promo.dataCadastro, 'dd/MM/yyyy')}">06/04/2021</span>
           </div>
           <div class="likes">
-            <button>
-            <img src="img/icons/like.svg" alt="">
-            <span th:text="${promo.likes}">0</span>
+            <button th:id="${'likes-btn-'+promo.id}">
+              <img src="img/icons/like.svg" alt="">
+              <span th:id="${'likes-count-'+promo.id}" th:text="${promo.likes}">0</span>
             </button>
-
           </div>
         </div>
       </div>

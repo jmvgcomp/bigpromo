@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/tables.css}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <title>bigpromo.</title>
+</head>
+<body>
+<main add>
+    <div class="limit">
+        <div class="logo">
+            <a th:href="@{/}"><img th:src="@{/img/logo.svg}" alt=""></a>
+        </div>
+    </div>
+
+    <section class="s1">
+        <div id="loader-form" class="pre-load"></div>
+        <div class="limit" style="background-color: #FFF; border-radius: 10px; padding: 20px; font-family: 'regular',sans-serif;">
+            <table id="table-server" class="display nowrap" style="width:100%; ">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Link Promoção</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Likes</th>
+                    <th scope="col">Data de Cadastro</th>
+                    <th scope="col">Categoria</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </section>
+</main>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script th:src="@{/js/datatables.js}" th:fragment="js"></script>
+<script th:src="@{/js/bigpromo.js}" th:fragment="js"></script>
+<script th:src="@{/js/promo-datatables.js}" th:fragment="js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
+</body>
+</html>

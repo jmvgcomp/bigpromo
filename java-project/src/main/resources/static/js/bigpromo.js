@@ -85,3 +85,17 @@ $("#linkPromocao").on("change", function (){
         })
     }
 })
+
+$(document).on("click","button[id*='likes-btn-']", function (){
+  let id = $(this).attr("id").split("-")[2]
+    $.ajax({
+        method: "POST",
+        url: "/like/"+id,
+        success: function (response){
+            $("#likes-count-"+id).text(response)
+        },
+        error: function (xhr) {
+            alert("Ops, ocorreu um erro: "+ xhr.status +", "+xhr.statusText)
+        }
+    })
+})

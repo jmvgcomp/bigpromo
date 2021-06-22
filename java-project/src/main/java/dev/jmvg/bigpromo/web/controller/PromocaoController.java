@@ -4,6 +4,7 @@ import dev.jmvg.bigpromo.web.domain.Categoria;
 import dev.jmvg.bigpromo.web.domain.Promocao;
 import dev.jmvg.bigpromo.web.repository.CategoriaRepository;
 import dev.jmvg.bigpromo.web.repository.PromocaoRepository;
+import dev.jmvg.bigpromo.web.service.PromocaoDataTableService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
@@ -13,11 +14,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -36,6 +35,19 @@ public class PromocaoController {
         this.categoriaRepository = categoriaRepository;
         this.promocaoRepository = promocaoRepository;
     }
+
+    @GetMapping("/tabela")
+    public String showTabela(){
+        return "promo-datatables";
+    }
+
+    @GetMapping("/datatables/server")
+    public ResponseEntity<?> dataTables(HttpServletRequest request){
+        Map<String, Object> data = new PromocaoDataTableService().execute(promocaoRepository, request);
+        return ResponseEntity.ok(data);
+
+    }
+
 
     @ModelAttribute("categorias")
     public List<Categoria> getCategoria(){
@@ -58,11 +70,17 @@ public class PromocaoController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/like/{id}")
+    public ResponseEntity<?> adicionarLikes(@PathVariable("id") Long id){
+        promocaoRepository.updateSomarLikes(id);
+        int likes = promocaoRepository.findLikesById(id);
+        return ResponseEntity.ok(likes);
+    }
 
     @GetMapping("/index")
     public String listarOfertas(ModelMap model){
         PageRequest pageRequest = PageRequest.of(0, 8, Sort.by(Sort.Direction.DESC, "dataCadastro"));
-        PageRequest pageRequest2 = PageRequest.of(0, 1, Sort.by(Sort.Direction.DESC, "dataCadastro"));
+        PageRequest pageRequest2 = PageRequest.of(0, 1, Sort.by(Sort.Direction.DESC, "likes"));
         model.addAttribute("promocoes", promocaoRepository.findAll(pageRequest));
         model.addAttribute("promocoes2", promocaoRepository.findAll(pageRequest2));
         return "index";
