@@ -76,6 +76,12 @@ public class PromocaoController {
         return ResponseEntity.ok(likes);
     }
 
+    @GetMapping("/delete/{id}")
+    public ResponseEntity<?> excluirPromocao(@PathVariable("id") Long id){
+        promocaoRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
     @GetMapping("/index")
     public String listarOfertas(ModelMap model){
         PageRequest pageRequest = PageRequest.of(0, 8, Sort.by(Sort.Direction.DESC, "dataCadastro"));

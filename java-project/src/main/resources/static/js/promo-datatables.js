@@ -60,14 +60,30 @@ $(document).ready(function (){
 
     $('#btn-editar').on('click', function (){
         if(isSelectedRow()){
+            $("#modal-form").modal('show');
             let id = getPromoId();
-            alert('editar' + id)
         }
     })
     $('#btn-excluir').on('click', function (){
         if(isSelectedRow()){
-            alert('excluir')
+            $("#modal-delete").modal('show');
         }
+
+    })
+
+    $("#btn-del-modal").on('click', function (){
+        let id = getPromoId();
+        $.ajax({
+            method: "GET",
+            url: "/delete/"+id,
+            success: function (){
+                $("#modal-delete").modal('hide');
+                table.ajax.reload();
+            },
+            error: function (){
+                alert("Ocorreu um erro!")
+            }
+        })
     })
 
     function getPromoId(){
