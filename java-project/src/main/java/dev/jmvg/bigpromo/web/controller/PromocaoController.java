@@ -48,7 +48,6 @@ public class PromocaoController {
 
     }
 
-
     @ModelAttribute("categorias")
     public List<Categoria> getCategoria(){
         return categoriaRepository.findAll();
