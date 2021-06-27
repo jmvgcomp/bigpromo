@@ -9,7 +9,17 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.util.Map;
+
 public interface PromocaoRepository extends JpaRepository<Promocao, Long> {
+
+    @Query("select count(p.id) as count, max(p.dataCadastro) as lastDate " +
+            "from Promocao p where p.dataCadastro > :data")
+    Map<String, Object> totalAndUltimaPromocaoByDataCadastro(@Param("data") LocalDateTime data);
+
+    @Query("select p.dataCadastro from Promocao p")
+    Page<LocalDateTime> findUltimaDataDePromocao(Pageable pageable);
 
     @Query("select p from Promocao p where p.titulo like %:search% or " +
             "p.site like %:search% or " +
