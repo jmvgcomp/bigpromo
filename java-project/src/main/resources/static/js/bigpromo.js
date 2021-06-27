@@ -100,8 +100,40 @@ $(document).on("click","button[id*='likes-btn-']", function (){
     })
 })
 
+
+$("#btn-alert").on("click", function (){
+    $.ajax({
+        method: "GET",
+        url: "/list/ajax",
+        beforeSend: function (){
+            totalOfertas = 0;
+            $("#loader-img").addClass("loader");
+            $("#btn-alert").attr("style", "display: none;")
+            $(".cards").fadeOut(400, function (){
+                $(this).empty();
+            })
+        },
+        success: function (response) {
+            $("#loader-img").removeClass("loader")
+            $(".cards").fadeIn(250, function () {
+                $(this).append(response)
+            })
+        },
+        error: function (xhr){
+            console.log("error: "+ xhr.statusText)
+        }
+    })
+
+
+})
+
+
 //Ajax reverso
 var totalOfertas = 0;
+
+$(document).ready(function (){
+    init();
+})
 
 function  init(){
     console.log("dwr init...");

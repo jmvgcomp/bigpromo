@@ -111,6 +111,13 @@ public class PromocaoController {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping("/list/ajax")
+    public String listarCards(@RequestParam(value = "page", defaultValue = "0") int page, ModelMap model){
+        PageRequest pageRequest = PageRequest.of(0, 8, Sort.by(Sort.Direction.DESC, "dataCadastro"));
+        model.addAttribute("promocoes", promocaoRepository.findAll(pageRequest));
+        return "promo-card";
+
+    }
 
     @GetMapping("/index")
     public String listarOfertas(ModelMap model){

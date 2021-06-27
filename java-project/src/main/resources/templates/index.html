@@ -61,7 +61,7 @@
     <section class="s2">
         <div class="limit" >
             <div class="form-group">
-                <button id="btn-alert" class="btn btn-warning btn-lg btn-block hidden" style="display: none"></button>
+                <button id="btn-alert" class="btn btn-warning btn-lg btn-block hidden" style="display: none;background-color: #fd5d5a; color: #FFF"></button>
             </div>
             <div class="cards" th:insert="promo-card">
 
@@ -71,6 +71,10 @@
 </main>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type='text/javascript' th:src="@{/dwr/engine.js}"></script>
+<script type='text/javascript' th:src="@{/dwr/interface/DWRAlertaPromocao.js}"></script>
+<script type='text/javascript' th:src="@{/dwr/util.js}"></script>
+
 <script th:src="@{/js/bigpromo.js}" th:fragment="js"></script>
 </body>
 </html>
