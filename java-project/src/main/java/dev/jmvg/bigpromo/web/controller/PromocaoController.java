@@ -2,6 +2,7 @@ package dev.jmvg.bigpromo.web.controller;
 
 import dev.jmvg.bigpromo.web.domain.Categoria;
 import dev.jmvg.bigpromo.web.domain.Promocao;
+import dev.jmvg.bigpromo.web.dto.PromocaoDTO;
 import dev.jmvg.bigpromo.web.repository.CategoriaRepository;
 import dev.jmvg.bigpromo.web.repository.PromocaoRepository;
 import dev.jmvg.bigpromo.web.service.PromocaoDataTableService;
@@ -81,6 +82,35 @@ public class PromocaoController {
         promocaoRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/edit/{id}")
+    public ResponseEntity<?> preEditarPromocao(@PathVariable("id") Long id){
+        Promocao promo = promocaoRepository.findById(id).get();
+        return ResponseEntity.ok(promo);
+    }
+
+    @PostMapping("/edit")
+    public ResponseEntity<?> editarPromocao(@Valid PromocaoDTO promo, BindingResult result){
+        if(result.hasErrors()){
+            Map<String, String> errors = new HashMap<>();
+            for (FieldError error: result.getFieldErrors()) {
+                errors.put(error.getField(), error.getDefaultMessage());
+            }
+            return ResponseEntity.unprocessableEntity().body(errors);
+        }
+
+        Promocao promocao = promocaoRepository.findById(promo.getId()).get();
+        promocao.setCategoria(promo.getCategoria());
+        promocao.setDescricao(promo.getDescricao());
+        promocao.setLinkImagem(promo.getLinkImagem());
+        promocao.setPreco(promo.getPreco());
+        promocao.setCategoria(promo.getCategoria());
+        promocao.setTitulo(promo.getTitulo());
+
+        promocaoRepository.save(promocao);
+
+        return ResponseEntity.ok().build();
+    }
+
 
     @GetMapping("/index")
     public String listarOfertas(ModelMap model){
